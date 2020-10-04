@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Projects from '../../components/Project'
-import barKeep from './assets/images/barkeep.png'
-import techBlog from './assets/images/TechBlog.png'
-import securePwGen from './assets/images/PasswordGenerator.png'
-import weatherDashboard from './assets/images/WeatherDashBoard.png'
+// import barKeep from 'src/assets/images/barkeep.png'
+// import techBlog from 'src/assets/images/TechBlog.png'
+// import securePwGen from 'src/assets/images/PasswordGenerator.png'
+// import weatherDashboard from 'src/assets/images/WeatherDashBoard.png'
 
 
 
@@ -13,7 +13,7 @@ function ProjectList () {
     {
       id: 1,
       title: "barKeep",
-      bgimg: barKeep,
+      bgimg: "barkeep.png",
       appurl: "https://jessicajernigan.github.io/team5-project-1/",
       repo: "https://github.com/jessicajernigan/team5-project-1",
       tech: "JavaScript, HTML, Foundation CSS"
@@ -21,7 +21,7 @@ function ProjectList () {
     {
       id: 2,
       title: "tech blog",
-      bgimage: techBlog,
+      bgimg: "barkeep.png",
       appurl: "https://module14-tech-blog.herokuapp.com/",
       repo: "https://github.com/jessicajernigan/week14-challenge_tech-blog",
       tech: "JavaScript, Express, Sequelize, Handlebars.js, MySQL, Heroku"
@@ -29,7 +29,7 @@ function ProjectList () {
     {
       id: 3,
       title: "secure password generator",
-      bgimg: securePwGen,
+      bgimg: "barkeep.png",
       appurl: "https://jessicajernigan.github.io/week3-challenge_password-generator/",
       repo: "https://github.com/jessicajernigan/week3-challenge_password-generator",
       tech: "JavaScript, HTML, CSS"
@@ -37,14 +37,15 @@ function ProjectList () {
     {
       id: 4,
       title: "weather dashboard",
-      bgimg: weatherDashboard,
+      bgimg: "barkeep.png",
       appurl: "https://jessicajernigan.github.io/week6-challenge_weather-dashboard/",
       repo: "https://github.com/jessicajernigan/week6-challenge_weather-dashboard",
       tech: "JavaScript, HTML, CSS"
     }
   ]);
 
-
+  console.log('This is projects: ', projects);
+  
   return (
     <section>
       <div>
@@ -53,7 +54,7 @@ function ProjectList () {
             <Projects 
             key={project.id} 
             image={project.bgimg} 
-            name={project.title} 
+            title={project.title} 
             repo={project.repo} 
             tech={project.tech} />
           ))}
