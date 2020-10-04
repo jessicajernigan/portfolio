@@ -17,7 +17,7 @@ function ContactForm() {
       }
     } else {
       if (!e.target.value.length) {
-        setErrorMessage(`${e.target.name} is required`)
+        setErrorMessage(`A ${e.target.name} is required for submission.`)
       } else {
         setErrorMessage('')
       }
@@ -43,10 +43,12 @@ function ContactForm() {
           <label htmlFor="name">Gotta name?</label>
           <input type="text" defaultValue={name} onChange={handleChange} style={{ width: "100%" }} name="name" />
         </div>
+        <br />
         <div>
           <label htmlFor="email">How about an email?</label>
           <input type="email" defaultValue={email} name="email" onChange={handleChange} style={{ width: "100%" }} />
         </div>
+        <br />
         <div>
           <label htmlFor="message">What's on your mind?</label>
           <textarea name="message" defaultValue={message} onChange={handleChange} rows="5" style={{ width: "100%" }} />

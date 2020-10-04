@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import Projects from '../../components/Project'
+import barKeep from './assets/images/barkeep.png'
+import techBlog from './assets/images/TechBlog.png'
+import securePwGen from './assets/images/PasswordGenerator.png'
+import weatherDashboard from './assets/images/WeatherDashBoard.png'
 
-const ProjectList = () => {
+
+
+function ProjectList () {
 
   const [projects] = useState([
     {
       id: 1,
       title: "barKeep",
-      bgimg: "./assets/images/barkeep.png",
+      bgimg: barKeep,
       appurl: "https://jessicajernigan.github.io/team5-project-1/",
       repo: "https://github.com/jessicajernigan/team5-project-1",
       tech: "JavaScript, HTML, Foundation CSS"
@@ -15,7 +21,7 @@ const ProjectList = () => {
     {
       id: 2,
       title: "tech blog",
-      bgimage: "./assets/images/TechBlog.png",
+      bgimage: techBlog,
       appurl: "https://module14-tech-blog.herokuapp.com/",
       repo: "https://github.com/jessicajernigan/week14-challenge_tech-blog",
       tech: "JavaScript, Express, Sequelize, Handlebars.js, MySQL, Heroku"
@@ -23,7 +29,7 @@ const ProjectList = () => {
     {
       id: 3,
       title: "secure password generator",
-      bgimg: "./assets/images/PasswordGenerator.png",
+      bgimg: securePwGen,
       appurl: "https://jessicajernigan.github.io/week3-challenge_password-generator/",
       repo: "https://github.com/jessicajernigan/week3-challenge_password-generator",
       tech: "JavaScript, HTML, CSS"
@@ -31,7 +37,7 @@ const ProjectList = () => {
     {
       id: 4,
       title: "weather dashboard",
-      bgimg: "./assets/images/WeatherDashBoard.png",
+      bgimg: weatherDashboard,
       appurl: "https://jessicajernigan.github.io/week6-challenge_weather-dashboard/",
       repo: "https://github.com/jessicajernigan/week6-challenge_weather-dashboard",
       tech: "JavaScript, HTML, CSS"
@@ -44,13 +50,18 @@ const ProjectList = () => {
       <div>
         <div>
           {projects.map((project) => (
-            <Projects key={project.id} image={project.bgimg} name={project.title} repo={project.repo} tech={project.tech} />
+            <Projects 
+            key={project.id} 
+            image={project.bgimg} 
+            name={project.title} 
+            repo={project.repo} 
+            tech={project.tech} />
           ))}
         </div>
       </div>
     </section>
-
   );
 };
+
 
 export default ProjectList;
