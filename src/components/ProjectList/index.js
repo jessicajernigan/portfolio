@@ -7,7 +7,7 @@ import Projects from '../../components/Project'
 
 
 
-function ProjectList () {
+function ProjectList() {
 
   const [projects] = useState([
     {
@@ -21,7 +21,7 @@ function ProjectList () {
     {
       id: 2,
       title: "tech blog",
-      bgimg: "barkeep.png",
+      bgimg: "TechBlog.png",
       appurl: "https://module14-tech-blog.herokuapp.com/",
       repo: "https://github.com/jessicajernigan/week14-challenge_tech-blog",
       tech: "JavaScript, Express, Sequelize, Handlebars.js, MySQL, Heroku"
@@ -29,7 +29,7 @@ function ProjectList () {
     {
       id: 3,
       title: "secure password generator",
-      bgimg: "barkeep.png",
+      bgimg: "PasswordGenerator.png",
       appurl: "https://jessicajernigan.github.io/week3-challenge_password-generator/",
       repo: "https://github.com/jessicajernigan/week3-challenge_password-generator",
       tech: "JavaScript, HTML, CSS"
@@ -37,7 +37,7 @@ function ProjectList () {
     {
       id: 4,
       title: "weather dashboard",
-      bgimg: "barkeep.png",
+      bgimg: "WeatherDashBoard.png",
       appurl: "https://jessicajernigan.github.io/week6-challenge_weather-dashboard/",
       repo: "https://github.com/jessicajernigan/week6-challenge_weather-dashboard",
       tech: "JavaScript, HTML, CSS"
@@ -45,20 +45,19 @@ function ProjectList () {
   ]);
 
   console.log('This is projects: ', projects);
-  
+
   return (
-    <section>
-      <div>
-        <div>
-          {projects.map((project) => (
-            <Projects 
-            key={project.id} 
-            image={project.bgimg} 
-            title={project.title} 
-            repo={project.repo} 
+    <section className="container">
+      <div className="flex-row">
+        {projects.map((project) => (
+          <Projects
+            key={project.id}
+            image={project.bgimg}
+            title={project.title}
+            repo={project.repo}
+            appurl={project.appurl}
             tech={project.tech} />
-          ))}
-        </div>
+        ))}
       </div>
     </section>
   );
