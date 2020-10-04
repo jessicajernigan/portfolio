@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "title": "barKeep",
+    "bg-image": "./assets/images/barkeep.png",
+    "app-url": "https://jessicajernigan.github.io/team5-project-1/",
+    "repo": "https://github.com/jessicajernigan/team5-project-1",
+    "tech": "JavaScript, HTML, Foundation CSS"
+  },
+  {
+    "id": 2,
+    "title": "tech blog",
+    "bg-image": "./assets/images/techblog.png",
+    "app-url": "https://module14-tech-blog.herokuapp.com/",
+    "repo": "https://github.com/jessicajernigan/week14-challenge_tech-blog",
+    "tech": "JavaScript, Express, Sequelize, Handlebars.js, MySQL, Heroku"
+  },
+  {
+    "id": 3,
+    "title": "secure password generator",
+    "bg-image": "./assets/images/pwg.png",
+    "app-url": "https://jessicajernigan.github.io/week3-challenge_password-generator/",
+    "repo": "https://github.com/jessicajernigan/week3-challenge_password-generator",
+    "tech": "JavaScript, HTML, CSS"
+  },
+  {
+    "id": 4,
+    "title": "weather dashboard",
+    "bg-image": "./assets/images/wdb.png",
+    "app-url": "https://jessicajernigan.github.io/week6-challenge_weather-dashboard/",
+    "repo": "https://github.com/jessicajernigan/week6-challenge_weather-dashboard"
+  }
+]

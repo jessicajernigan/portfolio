@@ -1,20 +1,65 @@
-import React from "react";
+import React, { useState } from 'react';
+import { validateEmail } from '../../utils/helpers';
 
-const Contact = () => (
-  <div>
-    <h1>Contact Page</h1>
-    <p>
-      Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis molestie urna.
-      Aliquam semper ultrices varius. Aliquam faucibus sit amet magna a ultrices. Aenean
-      pellentesque placerat lacus imperdiet efficitur. In felis nisl, luctus non ante euismod,
-      tincidunt bibendum mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-      posuere, eget tristique dui dapibus. Maecenas fermentum elementum faucibus. Quisque nec metus
-      vestibulum, egestas massa eu, sollicitudin ipsum. Nulla facilisi. Sed ut erat ligula. Nam
-      tincidunt nunc in nibh dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-      conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at rhoncus. Etiam vel
-      condimentum magna, quis tempor nulla.
-    </p>
-  </div>
-);
+function ContactForm() {
+  const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const { name, email, message } = formState;
+  const [errorMessage, setErrorMessage] = useState('');
 
-export default Contact;
+  function handleChange(e) {
+    if (e.target.name === 'email') {
+      const isValid = validateEmail(e.target.value)
+      // console.log(isValid)
+      if (!isValid) {
+        setErrorMessage('Your email is invalid')
+      } else {
+        setErrorMessage('')
+      }
+    } else {
+      if (!e.target.value.length) {
+        setErrorMessage(`${e.target.name} is required`)
+      } else {
+        setErrorMessage('')
+      }
+    }
+    if (!errorMessage) {
+      setFormState({ ...formState, [e.target.name]: e.target.value })
+    }
+  }
+
+
+  // console.log(formState);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(formState);
+  }
+
+  return (
+    <section className="container">
+      <h1>Let's chat.</h1>
+      <form id="contact-form" onSubmit={handleSubmit}>
+        <div>
+          <label htmlFor="name">Gotta name?</label>
+          <input type="text" defaultValue={name} onChange={handleChange} style={{ width: "100%" }} name="name" />
+        </div>
+        <div>
+          <label htmlFor="email">How about an email?</label>
+          <input type="email" defaultValue={email} name="email" onChange={handleChange} style={{ width: "100%" }} />
+        </div>
+        <div>
+          <label htmlFor="message">What's on your mind?</label>
+          <textarea name="message" defaultValue={message} onChange={handleChange} rows="5" style={{ width: "100%" }} />
+        </div>
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  )
+}
+
+export default ContactForm;
