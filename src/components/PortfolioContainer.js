@@ -4,6 +4,8 @@ import Home from './Home';
 import About from './About';
 import ProjectList from './ProjectList';
 import Contact from './Contact';
+import Footer from './Footer';
+import Header from './Header';
 
 function Portfolio() {
   const [currentPage, handlePageChange] = useState('Home');
@@ -23,8 +25,10 @@ function Portfolio() {
 
   return (
     <div>
+      <Header />
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       <div>{renderPage(currentPage)}</div>
+      <Footer />;
     </div>
   );
 }
