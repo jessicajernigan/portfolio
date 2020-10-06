@@ -92,7 +92,6 @@ a:hover {
 header {
   font-family: 'Carter One', cursive;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-bottom: 20px;
@@ -100,7 +99,13 @@ header {
   left: 0;
   top: 0; 
   width: 100%;
-  background-image: url("./assets/images/oriental-tiles.png");
+  /* background-image: url("./assets/images/vintage-wallpaper.png"); */
+}
+
+.contact {
+  background-image: url("./assets/images/vintage-wallpaper.png"); 
+  padding: 20px;
+  border-radius: 15px;
 }
 
 header h1 {
@@ -167,7 +172,6 @@ textarea {
 }
 
 .container {
-  width: 85%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -236,13 +240,24 @@ textarea {
   padding-bottom: var(--spacing-two);
 }
 
-.card {
-  width: 30%;
+.projectcardlist {
+  display: flex;
+  margin: auto;
+}
+
+.projectcardwrapper {
+  margin: 5px 30px 200px;
+}
+
+.projectcard {
+  width: 400px;
+  height: 200px;
   text-align: center;
-  margin: 10px;
   background-color: var(--secondary);
   box-shadow: 5px 5px 50px black;
+  border-radius: 10px;
 }
+
 
 .card a {
   text-decoration: none;
@@ -253,6 +268,10 @@ textarea {
   text-decoration: none;
   color: var(--light);
   text-shadow: 0 0 2px var(--tertiary)
+}
+
+.title {
+  font-family: 'Carter One', cursive;
 }
 
 .img-thumbnail {

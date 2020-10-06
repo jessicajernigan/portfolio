@@ -3,7 +3,7 @@ import React from 'react';
 function Header(props) {
   const tabs = ['About', 'Projects', 'Contact'];
   return (
-    <header>
+    <header className="space-between">
       <h1>Jessica Jernigan</h1>
       <nav>
         <ul className="flex-row">

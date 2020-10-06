@@ -11,7 +11,7 @@ function ContactForm() {
       const isValid = validateEmail(e.target.value)
       // console.log(isValid)
       if (!isValid) {
-        setErrorMessage('Your email is invalid')
+        setErrorMessage('Your email is invalid.')
       } else {
         setErrorMessage('')
       }
@@ -36,16 +36,17 @@ function ContactForm() {
   }
 
   return (
-    <section className="container">
-      <h1>Let's chat.</h1>
+    <section className="container contact">
+      <h1>Drop me a line.</h1>
+      <br />
       <form id="contact-form" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="name">Gotta name?</label>
+          <label htmlFor="name">What should I call you?</label>
           <input type="text" defaultValue={name} onChange={handleChange} style={{ width: "100%" }} name="name" />
         </div>
         <br />
         <div>
-          <label htmlFor="email">How about an email?</label>
+          <label htmlFor="email">Got an email?</label>
           <input type="email" defaultValue={email} name="email" onChange={handleChange} style={{ width: "100%" }} />
         </div>
         <br />
