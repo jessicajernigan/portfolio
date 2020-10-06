@@ -31,11 +31,27 @@ function ProjectList() {
     },
     {
       id: 4,
+      title: "Engineering Team Generator",
+      bgimg: "meettheteam.png",
+      appurl: "https://drive.google.com/file/d/1bo74GBJLX51VJXcipDg-Kfz-R1fy9IZT/view",
+      repo: "https://github.com/jessicajernigan/week10-challenge_nodejs-eng-team-directory-generator",
+      tech: "Node.js • HTML • JavaScript • Inquirer.js"
+    },
+    {
+      id: 5,
       title: "Weather Dashboard",
       bgimg: "WeatherDashBoard.png",
       appurl: "https://jessicajernigan.github.io/week6-challenge_weather-dashboard/",
       repo: "https://github.com/jessicajernigan/week6-challenge_weather-dashboard",
       tech: "JavaScript • HTML • CSS"
+    },
+    {
+      id: 6,
+      title: "Employee Database",
+      bgimg: "employeedb.png",
+      appurl: "https://drive.google.com/file/d/1tZEYnArRZAYUVdgxLk_bwO42hMwH4Cir/view",
+      repo: "https://github.com/jessicajernigan/week12-challenge_cli-employee-database",
+      tech: "JavaScript • Node.js • CSS"
     }
   ]);
 
@@ -44,16 +60,18 @@ function ProjectList() {
   return (
     <section className="container">
       <div className="projectcardlist">
-        <div className="flex-row">
-          {projects.map((project) => (
-            <Projects
-              key={project.id}
-              image={project.bgimg}
-              title={project.title}
-              repo={project.repo}
-              appurl={project.appurl}
-              tech={project.tech} />
-          ))}
+        <div className="projectcardwrapper">
+          <div className="flex-row">
+            {projects.map((project) => (
+              <Projects
+                key={project.id}
+                image={project.bgimg}
+                title={project.title}
+                repo={project.repo}
+                appurl={project.appurl}
+                tech={project.tech} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

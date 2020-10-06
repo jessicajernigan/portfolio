@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
-
 main {
   margin: 0 auto;
   max-width: 90%;
@@ -36,7 +35,7 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background: var(--darker);
+  background-image: url("./assets/images/vintage-wallpaper.png");
   color: var(--light);
   font-family: 'Josefin Sans', cursive;
 }
@@ -91,24 +90,33 @@ a:hover {
 
 header {
   font-family: 'Carter One', cursive;
+  padding: 20px 35px;
+  background-position: 80%;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 20px;
-  left: 0;
-  top: 0; 
-  width: 100%;
-  /* background-image: url("./assets/images/vintage-wallpaper.png"); */
+  flex-wrap: wrap;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .contact {
-  background-image: url("./assets/images/vintage-wallpaper.png"); 
+  background-image: url("./assets/images/moroccan-flower.png");
   padding: 20px;
   border-radius: 15px;
+  width: 800px;
+  color: var(--darker);
 }
 
-header h1 {
+.contact h1 {
+text-align: center;
+}
+
+header h1, .contact h1 {
   font-family: 'Carter One', cursive;
   font-size: 50px
 }
@@ -241,30 +249,40 @@ textarea {
 }
 
 .projectcardlist {
+  width: 100%;
+  margin: 0 auto;
   display: flex;
-  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .projectcardwrapper {
-  margin: 5px 30px 200px;
+  flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
 }
 
 .projectcard {
-  width: 400px;
-  height: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height: 450px;
+  width: 30%;
+  margin: auto;
   text-align: center;
-  background-color: var(--secondary);
-  box-shadow: 5px 5px 50px black;
-  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 
-.card a {
+.projectcard a {
   text-decoration: none;
   color: var(--light);
 }
 
-.card a:hover {
+.projectcard a:hover {
   text-decoration: none;
   color: var(--light);
   text-shadow: 0 0 2px var(--tertiary)
@@ -275,13 +293,20 @@ textarea {
 }
 
 .img-thumbnail {
-  width: 100%;
-  height: 80%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: top;
+  overflow: hidden;
+  position: relative;
 }
 
 .img-thumbnail:hover {
@@ -293,7 +318,6 @@ textarea {
   border-radius: 400px;
   box-shadow: 5px 5px 50px black;
 }
-
 
 button {
   background: var(--primary);
@@ -331,7 +355,6 @@ nav li {
   cursor: pointer;
 }
 
-
 footer {
   display: flex;
   justify-content: center;
@@ -339,7 +362,7 @@ footer {
   width: 100%;
   padding: 5px;
   left: 0;
-  bottom: 0; 
+  bottom: 0;
   width: 100%;
   z-index: 9999;
   position: absolute;
@@ -356,3 +379,8 @@ footer {
   color: var(--secondary);
 } */
 
+@media screen and (max-width: 575px) {
+  .projectCardList {
+    flex: 0 100%;
+  }
+}
