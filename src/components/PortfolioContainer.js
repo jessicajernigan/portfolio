@@ -1,34 +1,29 @@
 import React, { useState } from 'react';
-import NavTabs from './Nav';
-import Home from './Home';
+import Header from './Header';
 import About from './About';
 import ProjectList from './ProjectList';
 import Contact from './Contact';
 import Footer from './Footer';
-import Header from './Header';
 
 function Portfolio() {
-  const [currentPage, handlePageChange] = useState('Home');
+  const [currentPage, handlePageChange] = useState('About');
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'About':
-        return <About />;
       case 'Projects':
         return <ProjectList />;
       case 'Contact':
         return <Contact />;
       default:
-        return <Home />;
+        return <About />;
     }
   };
 
   return (
     <div>
-      <Header />
-      <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
-      <div>{renderPage(currentPage)}</div>
-      <Footer />;
+      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
+      <main>{renderPage(currentPage)}</main>
+      <Footer />
     </div>
   );
 }

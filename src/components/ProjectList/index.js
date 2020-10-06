@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import Projects from '../../components/Project'
-// import barKeep from 'src/assets/images/barkeep.png'
-// import techBlog from 'src/assets/images/TechBlog.png'
-// import securePwGen from 'src/assets/images/PasswordGenerator.png'
-// import weatherDashboard from 'src/assets/images/WeatherDashBoard.png'
-
 
 
 function ProjectList() {
